@@ -6,23 +6,32 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import Form from "./Form/Form";
+import List from "./List/List";
+import { useSelector } from "react-redux";
 
 const Main = () => {
+  const expenses = useSelector((state) => state.expense.expenses);
+
+  let total = expenses.reduce((acc, currVal) => {
+    return acc + Number(currVal.amount);
+  }, 0);
+
   return (
     <Card>
       <CardHeader title="Expense Tracker" />
 
       <CardContent align="center">
-        <Typography variant="h5">Total Balance $(balance)</Typography>
+        <Typography variant="h5">Total Balance $({total})</Typography>
 
-        <h1>Form</h1>
+        <Form />
       </CardContent>
       <Divider />
 
       {/* List */}
 
       <CardContent align="center">
-        <h1>List</h1>
+        <List />
       </CardContent>
     </Card>
   );

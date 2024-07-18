@@ -16,13 +16,13 @@ function App() {
           alignItems="center"
           style={{ height: "100vh", padding: "0px 100px" }}
         >
-          <Grid item xs={3.3} md={4}>
+          <Grid item xs={3.5}>
             <Detail title="Income" />
           </Grid>
-          <Grid item xs={4.5} md={4}>
+          <Grid item xs={5}>
             <Main />
           </Grid>
-          <Grid item xs={3.3} md={4}>
+          <Grid item xs={3.5}>
             <Detail title="Expense" />
           </Grid>
         </Grid>
